@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>SignIn</servlet-name>
+        <servlet-class>servlets.SignIn</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignIn</servlet-name>
+        <url-pattern>/sign-in</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SignUp</servlet-name>
+        <servlet-class>servlets.SignUp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUp</servlet-name>
+        <url-pattern>/sign-up</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SignOut</servlet-name>
+        <servlet-class>servlets.SignOut</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignOut</servlet-name>
+        <url-pattern>/sign-out</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewsEditing</servlet-name>
+        <servlet-class>servlets.NewsEditing</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsEditing</servlet-name>
+        <url-pattern>/news-edit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UsersEditing</servlet-name>
+        <servlet-class>servlets.UsersEditing</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsersEditing</servlet-name>
+        <url-pattern>/users-edit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FileServlet</servlet-name>
+        <servlet-class>servlets.FileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileServlet</servlet-name>
+        <url-pattern>/file-servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Entrance</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Entrance</servlet-name>
+        <url-pattern>/entrance</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserPage</servlet-name>
+        <jsp-file>/user-page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserPage</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModerPage</servlet-name>
+        <jsp-file>/moder-page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModerPage</servlet-name>
+        <url-pattern>/moder</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminPage</servlet-name>
+        <jsp-file>/admin-page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminPage</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewsPage</servlet-name>
+        <jsp-file>/news.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsPage</servlet-name>
+        <url-pattern>/news</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CatalogPage</servlet-name>
+        <jsp-file>/catalog.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CatalogPage</servlet-name>
+        <url-pattern>/catalog</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuyPage</servlet-name>
+        <jsp-file>/buy-success.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuyPage</servlet-name>
+        <url-pattern>/buying</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UsersEditingPage</servlet-name>
+        <jsp-file>/users-editing.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsersEditingPage</servlet-name>
+        <url-pattern>/users-editing</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewsEditingPage</servlet-name>
+        <jsp-file>/news-editing.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsEditingPage</servlet-name>
+        <url-pattern>/news-editing</url-pattern>
+    </servlet-mapping>
+</web-app>

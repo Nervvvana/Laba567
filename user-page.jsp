@@ -1,0 +1,85 @@
+<%@ page import="servlets.DataBase" %>
+<%@ page import="java.io.File" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
+    <%
+        if (session.getAttribute("current-user") == null)
+            response.sendRedirect("/Laba567/entrance");
+        else
+            switch ((String)session.getAttribute("role")) {
+                case "user":
+                    break;
+                case "moder":
+                    response.sendRedirect("/Laba567/moder");
+                    break;
+                case "admin":
+                    response.sendRedirect("/Laba567/admin");
+                    break;
+            }
+    %>
+    <head>
+        <title>Кабинет пользователя</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div>
+            <header>
+                <button id="text_logo">Эльдорадо 2</button>
+                <button class="header_buttons" onclick="pageRedirect('/entrance')">Выход</button>
+                <button class="header_buttons" onclick="pageRedirect('/catalog')">Каталог</button>
+                <button class="header_buttons" onclick="pageRedirect('/news')">Новости</button>
+            </header>
+            <div class="page_name">
+                <span>Личный кабинет</span>
+            </div>
+        </div>
+        <div id="personal_cabinet_wrapper">
+            <table id="personal_cabinet">
+                <tr>
+                    <td>
+                        <%
+                            out.println(
+                                "<img id='avatar' src='img/temp/" +
+                                DataBase.getUser((String)session.getAttribute("current-user")).getAvatar() + "'>"
+                            );
+                        %>
+                    </td>
+                    <td>
+                        <div>
+                            Здравствуйте,
+                            <%=
+                            DataBase.getUser((String)session.getAttribute("current-user")).getName()
+                            %>
+                            <div class="block">
+                                Количество авторизаций:
+                                <%=
+                                DataBase.getUser((String)session.getAttribute("current-user")).getSign_in_count()
+                                %>
+                            </div><br>
+                            <div class="block">
+                                Вход на страницу был осуществлен в:
+                                <%=
+                                session.getAttribute("sign-in-time")
+                                %>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form method="post" action="http://localhost:8080/Laba567/file-servlet" enctype="multipart/form-data">
+                            <input type="file" id="photo" name="file-name"><br>
+                            <button type="submit">Загрузить фото</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="js/jquery-3.6.3.min.js"></script>
+        <script src="js/utils.js"></script>
+    </body>
+    <%
+        session.removeAttribute("current-page");
+        session.setAttribute("current-page", "/user");
+    %>
+</html>
